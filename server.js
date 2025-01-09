@@ -1,4 +1,5 @@
 const express = require('express');
+const cors = require('cors');
 const multer = require('multer');
 const fluentFFmpeg = require('fluent-ffmpeg');
 const path = require('path');
@@ -6,6 +7,9 @@ const fs = require('fs');
 
 // Server setup
 const app = express();
+// apply cors middleward
+app.use(cors());
+
 const port = 3000;
 
 // Multer setup for file upload
