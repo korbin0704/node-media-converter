@@ -24,7 +24,8 @@ const storage = multer.diskStorage({
 const upload = multer({ storage });
 
 // File conversion endpoint
-app.post('/convertToWebm', upload.single('file'), (req, res) => {
+app.post('/convert-to-webm', upload.single('file'), (req, res) => {
+  console.log("convertToWebm called")
   const inputFile = req.file.path;
   const outputFile = `uploads/${Date.now()}.webm`;
 
